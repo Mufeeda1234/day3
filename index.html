@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+</head>
+<h1 style="color: blueviolet;">calculator</h1>
+<style > 
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        background-color: darkgray;
+    }
+
+    h1{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    input[type="number"],
+    select{
+        padding: 20px;
+        font-size: medium;
+        border: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        margin-bottom: 23px;
+        border: 1px solid rosybrown;
+    }
+
+
+</style>
+<body>
+    
+    
+    <input type="number" id="num1">
+    <select id="operator">
+       
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2">
+    <button onclick="calculate()">calculate</button>
+    <p id="result"></p>
+    <script>
+        
+            function add(num1,num2){
+                return num1+num2;
+            }
+            
+            function sub(num1,num2){
+                return num1-num2;
+            }
+            
+            function mul(num1,num2){
+                return num1*num2;
+            }
+    
+            function div(num1,num2){
+                return num1/num2;
+            }
+
+
+            function calculate(){
+            
+            var num1=parseFloat(document.getElementById("num1").value);
+            var num2=parseFloat(document.getElementById("num2").value);
+            var operator=document.getElementById("operator").value;
+            var result;
+           
+        
+            switch(operator){
+                case "+":
+                    result=add(num1,num2);
+                    break;
+                    case "-":
+                    result=sub(num1,num2);
+                    break;
+                    case "*":
+                    result=mul(num1,num2);
+                    break;
+                    case "/":
+                    result=div(num1,num2);
+                    break;
+                    default:
+                        result="input invalid";
+                    
+            }
+            document.getElementById("result").innerHTML=result;
+
+            }
+        </script>
+    
+</body>
+</html>
